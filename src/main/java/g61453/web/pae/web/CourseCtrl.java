@@ -30,4 +30,10 @@ public class CourseCtrl {
         model.addAttribute("course", optCourse.orElse(null));
         return "course-detail";
     }
+
+    @PostMapping("/courses/add-course")
+    public String addCourse(Course course) {
+        paeService.addCourse(course);
+        return "redirect:/courses";
+    }
 }
