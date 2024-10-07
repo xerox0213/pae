@@ -27,4 +27,8 @@ public class PaeService {
     public Optional<Course> getCourse(String acronym) {
         return courseRepository.findById(acronym);
     }
+
+    public void addCourse(Course course) {
+        courseRepository.save(course);
+    }
 }
