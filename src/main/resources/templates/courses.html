@@ -9,24 +9,24 @@
 <body>
 <main layout:fragment="content">
     <h2 class="content-title">Liste des cours</h2>
-    <table class="table course-table">
-        <thead class="table-header">
-        <tr class="table-row-header">
-            <th class="table-cell">Sigle</th>
-            <th class="table-cell">Titre</th>
-            <th class="table-cell">ECTS</th>
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="table-header-cell table-horizontal-cell">Sigle</th>
+            <th class="table-header-cell table-horizontal-cell">Titre</th>
+            <th class="table-header-cell table-horizontal-cell">ECTS</th>
         </tr>
         </thead>
 
-        <tbody class="table-body">
-        <tr th:each="course : ${courses}" class="table-row-body">
-            <td class="table-cell">
+        <tbody>
+        <tr th:each="course : ${courses}" class="table-body-row">
+            <td class="table-horizontal-cell">
                 <a th:href="@{/courses/{acronym}(acronym=${course.acronym})}" th:text="${course.acronym}" class="link nav-link">
                     acronym
                 </a>
             </td>
-            <td th:text="${course.title}" class="table-cell">title</td>
-            <td th:text="${course.credits}" class="table-cell">credits</td>
+            <td th:text="${course.title}" class="table-horizontal-cell">title</td>
+            <td th:text="${course.credits}" class="table-horizontal-cell">credits</td>
         </tr>
         </tbody>
     </table>
