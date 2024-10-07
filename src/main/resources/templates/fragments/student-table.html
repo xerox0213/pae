@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Table</title>
+</head>
+<body>
+
+<table th:fragment="student-table(students)" class="table">
+    <thead class="table-header">
+    <tr class="table-row-header">
+        <th class="table-cell">Matricule</th>
+        <th class="table-cell">Nom</th>
+        <th class="table-cell">Genre</th>
+        <th class="table-cell">Section</th>
+    </tr>
+    </thead>
+
+    <tbody class="table-body">
+    <tr th:each="student : ${students}" class="table-row-body">
+        <td th:text="${student.number}" class="table-cell">number</td>
+        <td th:text="${student.name}" class="table-cell">name</td>
+        <td th:text="${student.gender}" class="table-cell">gender</td>
+        <td th:text="${student.section}" class="table-cell">section</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
