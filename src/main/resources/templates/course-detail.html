@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="~{layout}" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail du cours</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <h2 th:text="${course.title}" class="content-title">title</h2>
+    <table class="table">
+        <tbody>
+        <tr class="table-body-row">
+            <th class="table-header-cell table-vertical-cell">Sigle</th>
+            <td th:text="${course.acronym}" class="table-vertical-cell">acronym</td>
+        </tr>
+        <tr class="table-body-row">
+            <th class="table-header-cell table-vertical-cell">Titre</th>
+            <td th:text="${course.title}" class="table-vertical-cell">title</td>
+        </tr>
+        <tr class="table-body-row">
+            <th class="table-header-cell table-vertical-cell">ECTS</th>
+            <td th:text="${course.credits}" class="table-vertical-cell">credits</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table th:replace="~{/fragments/student-table::student-table(students=${course.students})}"></table>
+    <p>Retour à la page de <a th:href="@{/courses}" class="link nav-link">précédente</a></p>
+</main>
+</body>
+</html>
