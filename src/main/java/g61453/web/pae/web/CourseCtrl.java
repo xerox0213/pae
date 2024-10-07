@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Optional;
 
@@ -19,6 +20,7 @@ public class CourseCtrl {
     public String index(Model model) {
         Iterable<Course> courses = paeService.getCourses();
         model.addAttribute("courses", courses);
+        model.addAttribute("course", new Course());
         return "courses";
     }
 
