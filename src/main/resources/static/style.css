@@ -109,3 +109,39 @@ body {
 .table-vertical-cell {
     padding: 5px;
 }
+
+.form {
+    border: 1px solid black;
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+.form-title {
+    text-align: center;
+    background-color: var(--blue);
+    color: white;
+    padding: 5px;
+}
+
+.form-wrapper {
+    padding: 10px;
+}
+
+.form-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 15px;
+}
+
+.form-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--blue);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
