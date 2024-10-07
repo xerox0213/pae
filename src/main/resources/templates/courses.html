@@ -20,7 +20,11 @@
 
         <tbody class="table-body">
         <tr th:each="course : ${courses}" class="table-row-body">
-            <td th:text="${course.acronym}" class="table-cell">acronym</td>
+            <td class="table-cell">
+                <a th:href="@{/courses/{acronym}(acronym=${course.acronym})}" th:text="${course.acronym}" class="link nav-link">
+                    acronym
+                </a>
+            </td>
             <td th:text="${course.title}" class="table-cell">title</td>
             <td th:text="${course.credits}" class="table-cell">credits</td>
         </tr>
