@@ -11,7 +11,7 @@
     <h2 class="content-title">Liste des cours</h2>
     <table class="table course-table">
         <thead class="table-header">
-        <tr class="table-row">
+        <tr class="table-row-header">
             <th class="table-cell">Sigle</th>
             <th class="table-cell">Titre</th>
             <th class="table-cell">ECTS</th>
@@ -19,9 +19,9 @@
         </thead>
 
         <tbody class="table-body">
-        <tr th:each="course : ${courses}" class="table-row">
+        <tr th:each="course : ${courses}" class="table-row-body">
             <td th:text="${course.acronym}" class="table-cell">acronym</td>
-            <td th:tex="${course.title}" class="table-cell">title</td>
+            <td th:text="${course.title}" class="table-cell">title</td>
             <td th:text="${course.credits}" class="table-cell">credits</td>
         </tr>
         </tbody>
