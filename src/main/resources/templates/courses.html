@@ -33,20 +33,22 @@
     </table>
 
     <form th:action="@{/courses/add-course}" th:object="${course}" method="post" class="form">
-        <h3 class="form-title">Ajouter un nouveau cours</h3>
-        <div class="form-input-wrapper">
-            <label for="acronym">Sigle</label>
-            <input th:field="*{acronym}" id="acronym" type="text" placeholder="Entrez le sigle du cours">
+        <h3 class="form-title">Ajout nouveau cours</h3>
+        <div class="form-wrapper">
+            <div class="form-input-wrapper">
+                <label for="acronym">Sigle</label>
+                <input th:field="*{acronym}" id="acronym" type="text" placeholder="Entrez le sigle du cours">
+            </div>
+            <div class="form-input-wrapper">
+                <label for="title">Titre</label>
+                <input th:field="*{title}" id="title" type="text" placeholder="Entrez le titre du cours">
+            </div>
+            <div class="form-input-wrapper">
+                <label for="credits">ECTS</label>
+                <input th:field="*{credits}" id="credits" type="number" placeholder="Entrez le nombre d'ECTS du cours">
+            </div>
+            <button type="submit" class="form-btn">Ajouter</button>
         </div>
-        <div class="form-input-wrapper">
-            <label for="title">Titre</label>
-            <input th:field="*{title}" id="title" type="text" placeholder="Entrez le titre du cours">
-        </div>
-        <div class="form-input-wrapper">
-            <label for="credits">ECTS</label>
-            <input th:field="*{credits}" id="credits" type="number" placeholder="Entrez le nombre d'ECTS du cours">
-        </div>
-        <button type="submit">Ajouter</button>
     </form>
 </main>
 </body>
