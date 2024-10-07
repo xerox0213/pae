@@ -1,0 +1,83 @@
+/* ===== RESET CSS ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+/* ===== APP STYLE ===== */
+
+:root {
+    --blue: #2469B8;
+    --light-blue: #EEF4FC;
+}
+
+body {
+    height: 100lvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.header-wrapper, .nav-bar, .content, .footer {
+    padding: 10px;
+}
+
+.header {
+    background-color: var(--blue);
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo {
+    width: 100px;
+}
+
+.header-title {
+    color: white;
+}
+
+.nav-bar {
+    display: flex;
+    column-gap: 10px;
+    background-color: var(--light-blue);
+}
+
+.link {
+    color: var(--blue);
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.footer {
+    background-color: #F1F1F1;
+}

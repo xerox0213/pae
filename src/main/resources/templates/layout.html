@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style.css}">
     <title>Layout</title>
 </head>
 <body>
 <header class="header">
     <div class="header-wrapper">
-        <img th:src="@{/logo-he2b.png}" alt="logo HE2B">
+        <img th:src="@{/logo-he2b.png}" alt="logo HE2B" class="header-logo">
         <h1 class="header-title">Programme annuel des étudiants</h1>
     </div>
     <nav class="nav-bar">
-        <a th:href="@{/}">Home</a>
-        <a th:href="@{/courses}">Cours</a>
-        <a th:href="@{/students}">Etudiants</a>
+        <a th:href="@{/}" class="link nav-link">Home</a>
+        <a th:href="@{/courses}" class="link nav-link">Cours</a>
+        <a th:href="@{/students}" class="link nav-link">Etudiants</a>
     </nav>
 </header>
 
