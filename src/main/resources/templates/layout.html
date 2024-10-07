@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+</head>
+<body>
+<header class="header">
+    <div class="header-wrapper">
+        <img th:src="@{/logo-he2b.png}" alt="logo HE2B">
+        <h1 class="header-title">Programme annuel des étudiants</h1>
+    </div>
+    <nav class="nav-bar">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/courses}">Cours</a>
+        <a th:href="@{/students}">Etudiants</a>
+    </nav>
+</header>
+
+<main class="content" layout:fragment="content"></main>
+
+<footer class="footer">HE2B-ESI / web2 / 2024-2025</footer>
+</body>
+</html>
