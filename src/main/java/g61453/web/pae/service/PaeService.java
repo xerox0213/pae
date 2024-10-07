@@ -7,6 +7,8 @@ import g61453.web.pae.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class PaeService {
     @Autowired
@@ -20,5 +22,9 @@ public class PaeService {
 
     public Iterable<Course> getCourses() {
         return courseRepository.findAll();
+    }
+
+    public Optional<Course> getCourse(String acronym) {
+        return courseRepository.findById(acronym);
     }
 }
