@@ -29,11 +29,16 @@ p, h1, h2, h3, h4, h5, h6 {
     isolation: isolate;
 }
 
-/* ===== APP STYLE ===== */
+/* ========== APP STYLE ========== */
 
+/* ===== GENERAL ===== */
 :root {
     --blue: #2469B8;
     --light-blue: #EEF4FC;
+}
+
+.link {
+    color: var(--blue);
 }
 
 body {
@@ -68,10 +73,6 @@ body {
     display: flex;
     column-gap: 10px;
     background-color: var(--light-blue);
-}
-
-.link {
-    color: var(--blue);
 }
 
 .nav-link {
