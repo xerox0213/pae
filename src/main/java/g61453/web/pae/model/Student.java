@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Collection;
+
 @Entity
 @NoArgsConstructor
 @Data
@@ -18,4 +20,6 @@ public class Student {
     private Gender gender;
     @Enumerated(EnumType.STRING)
     private Section section;
+    @ManyToMany
+    private Collection<Course> courses;
 }
