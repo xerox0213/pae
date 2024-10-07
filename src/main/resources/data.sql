@@ -9,3 +9,10 @@ values ('Damon', 'M', 'APPLICATION'),
        ('Stefan', 'M', 'NETWORK'),
        ('Elena', 'F', 'INDUSTRIAL'),
        ('Nasreddine', 'M', 'APPLICATION');
+
+insert into student_courses (students_number, courses_acronym)
+values (1, '1DEV1A'),
+       (2, '1DEV1A'),
+       (3, '1DEV1A'),
+       (4, '1DEV1A'),
+       (1, '1EXP1A');
