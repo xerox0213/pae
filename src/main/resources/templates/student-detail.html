@@ -31,6 +31,8 @@
     </table>
 
     <table th:replace="fragments/course-table::course-table(courses=${student.courses})"></table>
+
+    <p>Retour à <a th:href="@{/students}" class="link nav-link">liste des étudiants</a></p>
 </main>
 </body>
 </html>
