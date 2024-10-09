@@ -9,8 +9,7 @@ public enum Section {
         this.label = label;
     }
 
-    @Override
-    public String toString() {
+    public String getLabel() {
         return label;
     }
 }

@@ -26,7 +26,7 @@
         </td>
         <td th:text="${student.name}" class="table-horizontal-cell">name</td>
         <td th:text="${student.gender}" class="table-horizontal-cell">gender</td>
-        <td th:text="${student.section}" class="table-horizontal-cell">section</td>
+        <td th:text="${student.section.getLabel()}" class="table-horizontal-cell">section</td>
     </tr>
     </tbody>
 </table>
