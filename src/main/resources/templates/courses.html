@@ -9,28 +9,7 @@
 <body>
 <main layout:fragment="content">
     <h2 class="content-title">Liste des cours</h2>
-    <table class="table">
-        <thead>
-        <tr>
-            <th class="table-header-cell table-horizontal-cell">Sigle</th>
-            <th class="table-header-cell table-horizontal-cell">Titre</th>
-            <th class="table-header-cell table-horizontal-cell">ECTS</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr th:each="course : ${courses}" class="table-body-row">
-            <td class="table-horizontal-cell">
-                <a th:href="@{/courses/{acronym}(acronym=${course.acronym})}" th:text="${course.acronym}"
-                   class="link nav-link">
-                    acronym
-                </a>
-            </td>
-            <td th:text="${course.title}" class="table-horizontal-cell">title</td>
-            <td th:text="${course.credits}" class="table-horizontal-cell">credits</td>
-        </tr>
-        </tbody>
-    </table>
+    <table th:replace="~{/fragments/course-table::course-table(courses=${courses})}"></table>
 
     <form th:action="@{/courses/add-course}" th:object="${course}" method="post" class="form">
         <h3 class="form-title">Ajout nouveau cours</h3>

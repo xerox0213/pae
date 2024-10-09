@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course table</title>
+</head>
+<body>
+<table th:fragment="course-table(courses)" class="table">
+    <thead>
+    <tr>
+        <th class="table-header-cell table-horizontal-cell">Sigle</th>
+        <th class="table-header-cell table-horizontal-cell">Titre</th>
+        <th class="table-header-cell table-horizontal-cell">ECTS</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="course : ${courses}" class="table-body-row">
+        <td class="table-horizontal-cell">
+            <a th:href="@{/courses/{acronym}(acronym=${course.acronym})}" th:text="${course.acronym}"
+               class="link nav-link">
+                acronym
+            </a>
+        </td>
+        <td th:text="${course.title}" class="table-horizontal-cell">title</td>
+        <td th:text="${course.credits}" class="table-horizontal-cell">credits</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
