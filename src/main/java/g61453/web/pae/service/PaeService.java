@@ -20,6 +20,10 @@ public class PaeService {
         return studentRepository.findAll();
     }
 
+    public Optional<Student> getStudent(long number) {
+        return studentRepository.findById(number);
+    }
+
     public Iterable<Course> getCourses() {
         return courseRepository.findAll();
     }
