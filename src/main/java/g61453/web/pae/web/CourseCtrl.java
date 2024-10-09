@@ -5,6 +5,7 @@ import g61453.web.pae.service.PaeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,10 +26,15 @@ public class CourseCtrl {
     }
 
     @GetMapping("/courses/{acronym}")
-    public String courseDetail(@PathVariable String acronym, Model model) {
+    public String courseDetail(@PathVariable String acronym, Model model, ModelMap modelMap) {
         Optional<Course> optCourse = paeService.getCourse(acronym);
-        model.addAttribute("course", optCourse.orElse(null));
-        return "course-detail";
+        if (optCourse.isPresent()) {
+            model.addAttribute("course", optCourse.orElse(null));
+            return "course-detail";
+        } else {
+            model.addAttribute("errorMessage", "Le cours recherché n'existe pas !");
+            return "error/404";
+        }
     }
 
     @PostMapping("/courses/add-course")

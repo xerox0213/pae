@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="~{layout}" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <h2 th:if="${errorMessage}" th:text="${errorMessage}" class="content-title">error message</h2>
+    <h2 th:unless="${errorMessage}" class="content-title">Wops, vous essayez de naviguer vers des terres inconnues !</h2>
+    <p>Retourner en <a th:href="@{/}">terre connue</a></p>
+</main>
+</body>
+</html>

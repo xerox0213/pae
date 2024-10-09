@@ -31,8 +31,13 @@ public class StudentCtrl {
     @GetMapping("/students/{number}")
     public String getStudentDetail(@PathVariable long number, Model model) {
         Optional<Student> optStudent = paeService.getStudent(number);
-        model.addAttribute("student", optStudent.orElse(null));
-        return "student-detail";
+        if (optStudent.isPresent()) {
+            model.addAttribute("student", optStudent.get());
+            return "student-detail";
+        } else {
+            model.addAttribute("errorMessage", "L'étudiant recherché n'existe pas !");
+            return "error/404";
+        }
     }
 
     @PostMapping("/students/add-student")
