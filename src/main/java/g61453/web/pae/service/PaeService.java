@@ -24,6 +24,10 @@ public class PaeService {
         return studentRepository.findById(number);
     }
 
+    public void addStudent(Student student) {
+        studentRepository.save(student);
+    }
+
     public Iterable<Course> getCourses() {
         return courseRepository.findAll();
     }
