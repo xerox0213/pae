@@ -19,7 +19,11 @@
 
     <tbody>
     <tr th:each="student : ${students}" class="table-body-row">
-        <td th:text="${student.number}" class="table-horizontal-cell">number</td>
+        <td class="table-horizontal-cell">
+            <a th:text="${student.number}" th:href="@{/students/{number}(number=${student.number})}" class="link nav-link">
+                number
+            </a>
+        </td>
         <td th:text="${student.name}" class="table-horizontal-cell">name</td>
         <td th:text="${student.gender}" class="table-horizontal-cell">gender</td>
         <td th:text="${student.section}" class="table-horizontal-cell">section</td>
