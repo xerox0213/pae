@@ -17,16 +17,20 @@
             <div class="form-input-wrapper">
                 <label for="acronym">Sigle</label>
                 <input th:field="*{acronym}" id="acronym" type="text" placeholder="Entrez le sigle du cours">
+                <span th:errors="*{acronym}" class="input-error-msg"></span>
             </div>
             <div class="form-input-wrapper">
                 <label for="title">Titre</label>
                 <input th:field="*{title}" id="title" type="text" placeholder="Entrez le titre du cours">
+                <span th:errors="*{title}" class="input-error-msg"></span>
             </div>
             <div class="form-input-wrapper">
                 <label for="credits">ECTS</label>
                 <input th:field="*{credits}" id="credits" type="number" placeholder="Entrez le nombre d'ECTS du cours">
+                <span th:errors="*{credits}" class="input-error-msg"></span>
             </div>
             <button type="submit" class="form-btn">Ajouter</button>
+            <p th:if="${success != null}" th:text="${success}" class="form-success-msg">success message</p>
         </div>
     </form>
 </main>
