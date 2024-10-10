@@ -16,6 +16,7 @@
             <div class="form-input-wrapper">
                 <label for="name">Nom</label>
                 <input th:field="*{name}" type="text" id="name">
+                <span th:errors="*{name}" class="input-error-msg"></span>
             </div>
             <div class="form-input-wrapper">
                 <label for="gender">Genre</label>
@@ -30,6 +31,7 @@
                 </select>
             </div>
             <button type="submit" class="form-btn">Ajouter</button>
+            <p th:if="${success != null}" th:text="${success}" class="form-success-msg">success message</p>
         </div>
     </form>
 </main>
